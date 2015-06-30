@@ -79,7 +79,7 @@ def dtc_decrypt(code):
         #if len(current)<4:
             #raise "Tried to decode bad DTC: %s" % code
 
-        tc = obd_sensors.hex_to_int(current[0]) #typecode
+        tc = hex_to_int(current[0]) #typecode
         tc = tc >> 2
         if   tc == 0:
             type = "P"
@@ -92,10 +92,10 @@ def dtc_decrypt(code):
         else:
             raise tc
 
-        dig1 = str(obd_sensors.hex_to_int(current[0]) & 3)
-        dig2 = str(obd_sensors.hex_to_int(current[1]))
-        dig3 = str(obd_sensors.hex_to_int(current[2]))
-        dig4 = str(obd_sensors.hex_to_int(current[3]))
+        dig1 = str(hex_to_int(current[0]) & 3)
+        dig2 = str(hex_to_int(current[1]))
+        dig3 = str(hex_to_int(current[2]))
+        dig4 = str(hex_to_int(current[3]))
         dtc.append(type+dig1+dig2+dig3+dig4)
         current = current[4:]
     return dtc
