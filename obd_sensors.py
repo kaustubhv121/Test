@@ -134,7 +134,7 @@ class Sensor:
 
 SENSORS = [
     Sensor("pids"                  , "Supported PIDs"				, "0100" , hex_to_bitstring ,""       ), 
-    Sensor("dtc_status"            , "S-S DTC Cleared"				, "0101" , dtc_decrypt      ,""       ),    
+    Sensor("dtc_status"            , "S-S DTC Cleared"				, "03" , dtc_decrypt      ,""       ),    
     Sensor("dtc_ff"                , "DTC C-F-F"					, "0102" , cpass            ,""       ),      
     Sensor("fuel_status"           , "Fuel System Stat"				, "0103" , cpass            ,""       ),
     Sensor("load"                  , "Calc Load Value"				, "01041", percent_scale    ,""       ),    
